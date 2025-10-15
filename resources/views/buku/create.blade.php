@@ -1,0 +1,104 @@
+@extends('layouts.app')
+
+@section('title', 'Tambah Data Buku')
+
+@section('content')
+    <div class="page-header mb-4">
+        <div class="page-header-content">
+            <div>
+                <h1 class="mb-1" style="font-weight: 700; font-size: 28px; color: #2d3142;">Tambah Data Buku</h1>
+                <p class="text-muted mb-0" style="font-size: 14px;">Isi formulir di bawah untuk menambahkan data buku baru.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <div class="data-card">
+        <form action="{{ route('buku.store') }}" method="POST">
+            @csrf
+            <div class="form-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ISBN" class="form-label">ISBN</label>
+                        <input type="text" class="form-control @error('ISBN') is-invalid @enderror" id="ISBN" name="ISBN" value="{{ old('ISBN') }}" placeholder="Contoh: 978-602-03-2478-4" required minlength="10">
+                        @error('ISBN')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="judul" class="form-label">Judul Buku</label>
+                        <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" value="{{ old('judul') }}" placeholder="Masukkan judul buku" required>
+                        @error('judul')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group grid-full-width">
+                        <label for="kategori" class="form-label">Kategori</label>
+                        <select class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori" required>
+                            <option value="" disabled selected>Pilih salah satu kategori...</option>
+                            <option value="Fiksi" {{ old('kategori') == 'Fiksi' ? 'selected' : '' }}>Fiksi</option>
+                            <option value="Non-Fiksi" {{ old('kategori') == 'Non-Fiksi' ? 'selected' : '' }}>Non-Fiksi</option>
+                            <option value="Sains & Teknologi" {{ old('kategori') == 'Sains & Teknologi' ? 'selected' : '' }}>Sains & Teknologi</option>
+                            <option value="Sejarah" {{ old('kategori') == 'Sejarah' ? 'selected' : '' }}>Sejarah</option>
+                            <option value="Pengembangan Diri" {{ old('kategori') == 'Pengembangan Diri' ? 'selected' : '' }}>Pengembangan Diri</option>
+                        </select>
+                        @error('kategori')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="penulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control @error('penulis') is-invalid @enderror" id="penulis" name="penulis" value="{{ old('penulis') }}" placeholder="Masukkan nama penulis" required>
+                        @error('penulis')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="penerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control @error('penerbit') is-invalid @enderror" id="penerbit" name="penerbit" value="{{ old('penerbit') }}" placeholder="Masukkan nama penerbit" required>
+                        @error('penerbit')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
+                        <input type="number" class="form-control @error('tahun_terbit') is-invalid @enderror" id="tahun_terbit" name="tahun_terbit" value="{{ old('tahun_terbit') }}" placeholder="Contoh: 2023"  required maxlength="4">
+                        @error('tahun_terbit')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lokasi_rak" class="form-label">Lokasi Rak</label>
+                        <input type="text" class="form-control @error('lokasi_rak') is-invalid @enderror" id="lokasi_rak" name="lokasi_rak" value="{{ old('lokasi_rak') }}" placeholder="Contoh: A1-03" required>
+                        @error('lokasi_rak')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="{{ route('buku.index') }}" class="btn btn-secondary">Batal</a>
+                <button type="submit" class="btn btn-primary">
+                    Simpan Data
+                </button>
+            </div>
+        </form>
+    </div>
+@endsection
+
+@section('scripts')
+<script>
+    // Tahun Terbit validation - only numbers
+    document.getElementById('tahun_terbit').addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-4]/g, '');
+    })
+</script>
+@endsection
