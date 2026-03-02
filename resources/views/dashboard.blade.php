@@ -1,10 +1,7 @@
-{{-- Menggunakan layout utama dari file 'resources/views/layouts/app.blade.php'. --}}
-{{-- Semua konten di dalam file ini akan dimasukkan ke dalam @yield('content') di layout tersebut. --}}
+
 @extends('layouts.app')
 
-{{-- Menentukan judul halaman yang akan ditampilkan di tab browser. --}}
-{{-- Ini akan menggantikan @yield('title') di file layout. --}}
-@section('title', 'Dashboard - Rental Mobil')
+@section('title', 'Dashboard - Perpustakaan')
 
 {{-- Membuka section 'content'. Semua kode di bawah ini akan menjadi konten utama halaman. --}}
 @section('content')
@@ -20,10 +17,8 @@
     <div class="custom-card-row">
         {{-- Kolom untuk kartu statistik pertama. --}}
         <div class="custom-card-column">
-            {{-- Kartu untuk menampilkan total jumlah buku. --}}
             <div class="stats-card stats-card-primary">
                 <div class="stats-icon">
-                    {{-- SVG (Scalable Vector Graphics) untuk ikon buku. --}}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -45,12 +40,10 @@
             </div>
         </div>
 
-        {{-- Kolom untuk kartu statistik kedua. --}}
         <div class="custom-card-column">
             {{-- Kartu untuk menampilkan jumlah buku yang ditambahkan bulan ini. --}}
             <div class="stats-card stats-card-info">
                 <div class="stats-icon">
-                    {{-- SVG untuk ikon buku dengan detail. --}}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -76,15 +69,13 @@
         </div>
     </div>
 
-    {{-- Kartu modern untuk menampilkan tabel data buku yang baru ditambahkan. --}}
+    {{-- Card untuk menampilkan tabel data buku yang baru ditambahkan. --}}
     <div class="card-modern">
         <div class="card-modern-header">
             <div>
                 <h5 class="mb-1" style="font-weight: 600; color: #2d3142;">Buku Baru Ditambahkan</h5>
                 <p class="text-muted mb-0" style="font-size: 13px;">5 pendaftaran buku terakhir</p>
             </div>
-            {{-- Tombol ini mengarahkan pengguna ke halaman daftar semua buku. --}}
-            {{-- route('buku.index') adalah helper Laravel untuk membuat URL ke named route 'buku.index'. --}}
             <a href="{{ route('buku.index') }}" class="btn btn-outline-primary">
                 Lihat Semua
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 4px;">
@@ -94,10 +85,8 @@
             </a>
         </div>
 
-        {{-- Kontainer untuk tabel agar bisa responsif jika diperlukan (misal: scroll horizontal). --}}
         <div class="table-modern-container">
             <table class="table-modern">
-                {{-- Bagian kepala tabel (table head) yang berisi judul-judul kolom. --}}
                 <thead>
                     <tr>
                         <th class="th-number">
@@ -128,9 +117,6 @@
                 </thead>
                 {{-- Bagian tubuh tabel (table body) yang akan diisi dengan data. --}}
                 <tbody id="tableBody">
-                    {{-- Blade directive @forelse digunakan untuk melakukan perulangan pada array/collection. --}}
-                    {{-- Jika $bukuTerbaru memiliki data, maka blok kode di dalamnya akan dieksekusi untuk setiap item. --}}
-                    {{-- Jika $bukuTerbaru kosong, maka blok @empty yang akan dieksekusi. --}}
                     @forelse ($bukuTerbaru as $index => $data)
                         {{-- Atribut data-search digunakan untuk membantu fungsionalitas pencarian (search) dengan JavaScript. --}}
                         <tr class="table-row" data-search="{{ strtolower($data['kode_buku'] . ' ' . $data['penulis'] . ' ' . $data['kategori'] . ' ' . $data['penerbit']) }}">
@@ -159,16 +145,12 @@
                             </td>
                             <td class="td-publisher">
                                 <div class="publisher-info">
-                                    {{-- Menampilkan nama penerbit dan tahun terbit. --}}
                                     <span class="publisher-name">{{ $data['penerbit'] }}</span>
                                     <span class="publish-year">Tahun {{ $data['tahun_terbit'] }}</span>
                                 </div>
                             </td>
                             <td class="td-date">
                                 <div class="date-info">
-                                    {{-- Menggunakan library Carbon untuk memformat tanggal. --}}
-                                    {{-- \Carbon\Carbon::parse() mengubah string tanggal menjadi objek Carbon. --}}
-                                    {{-- format('d M Y') akan menghasilkan format seperti '15 Okt 2025'. --}}
                                     <span class="date-text">{{ \Carbon\Carbon::parse($data['tanggal_register'])->format('d M Y') }}</span>
                                     <span class="time-text">{{ \Carbon\Carbon::parse($data['tanggal_register'])->format('H:i') }}</span>
                                 </div>
@@ -177,7 +159,6 @@
                     {{-- Blok @empty akan dijalankan jika variabel $bukuTerbaru tidak memiliki data (kosong). --}}
                     @empty
                         <tr class="empty-row">
-                            {{-- colspan="7" membuat sel ini membentang sepanjang 7 kolom. --}}
                             <td colspan="7">
                                 <div class="empty-state">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -188,11 +169,9 @@
                                 </div>
                             </td>
                         </tr>
-                    {{-- Menutup directive @forelse. --}}
                     @endforelse
                 </tbody>
             </table>
         </div>
     </div>
-{{-- Menutup section 'content'. --}}
 @endsection

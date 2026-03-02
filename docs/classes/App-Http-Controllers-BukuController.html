@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-            <title>Dokumentasi Rental Mobil</title>
+            <title>Dokumentasi Perpustakaan</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
@@ -25,7 +25,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Dokumentasi Rental Mobil</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Dokumentasi Perpustakaan</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -62,6 +62,28 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="namespaces/app-http.html" class="">Http</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-models.html" class="">Models</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-providers.html" class="">Providers</a>
+                
+            </li>
+            </ul>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="namespaces/database.html" class="">Database</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/database-factories.html" class="">Factories</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/database-seeders.html" class="">Seeders</a>
                 
             </li>
             </ul>
@@ -101,7 +123,7 @@
     BukuController
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\App\Http\Controllers\Controller">Controller</abbr>
+        extends <a href="classes/App-Http-Controllers-Controller.html"><abbr title="\App\Http\Controllers\Controller">Controller</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -122,14 +144,17 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">Class BukuController
-Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
+Mengelola semua request HTTP terkait data buku.</p>
 
 
+    <section class="phpdocumentor-description"><p>Controller ini bertanggung jawab atas seluruh operasi CRUD (Create, Read, Update, Delete)
+untuk data buku yang disimpan dalam sebuah file JSON.</p>
+</section>
 
 
 
@@ -162,6 +187,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <span>
                         &nbsp;: string            </span>
 </dt>
+<dd>Mendefinisikan path (lokasi) file JSON yang digunakan sebagai database.</dd>
 
     </dl>
 
@@ -190,35 +216,35 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr>    </span>
 </dt>
-<dd>Menghapus data buku dari file JSON.</dd>
+<dd>Menghapus data buku dari file JSON berdasarkan ID-nya.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Http-Controllers-BukuController.html#method_edit">edit()</a>
     <span>
-                                &nbsp;: <abbr title="\Illuminate\View\View">View</abbr>    </span>
+                                &nbsp;: <abbr title="\Illuminate\View\View">View</abbr>|<abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr>    </span>
 </dt>
-<dd>Menampilkan form untuk mengedit data buku.</dd>
+<dd>Menampilkan form untuk mengedit data buku yang sudah ada.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Http-Controllers-BukuController.html#method_index">index()</a>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\View\View">View</abbr>    </span>
 </dt>
-<dd>Menampilkan daftar semua data buku.</dd>
+<dd>Menampilkan daftar semua data buku dalam bentuk tabel.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Http-Controllers-BukuController.html#method_store">store()</a>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr>    </span>
 </dt>
-<dd>Menyimpan data buku baru dari form.</dd>
+<dd>Menyimpan data buku baru yang dikirim dari form &#039;create&#039;.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Http-Controllers-BukuController.html#method_update">update()</a>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr>    </span>
 </dt>
-<dd>Memperbarui data buku di dalam file JSON.</dd>
+<dd>Memperbarui data buku di dalam file JSON berdasarkan input dari form &#039;edit&#039;.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/App-Http-Controllers-BukuController.html#method_generateKodeBuku">generateKodeBuku()</a>
@@ -278,11 +304,12 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Mendefinisikan path (lokasi) file JSON yang digunakan sebagai database.</p>
+
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
@@ -290,10 +317,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <span class="phpdocumentor-signature__name">$filePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;buku.json&#039;</span></code>
 
-    
-        <section class="phpdocumentor-description"><p>Lokasi file penyimpanan data buku.</p>
+        <section class="phpdocumentor-description"><p>File ini berada di dalam direktori 'storage/app/'.</p>
 </section>
 
+    
     
 
     
@@ -323,7 +350,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -345,6 +372,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan instance View untuk halaman pembuatan data baru.</p>
+</section>
+
             </section>
 
 </article>
@@ -362,7 +393,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
@@ -375,7 +406,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini mengumpulkan berbagai statistik seperti total buku,
+jumlah buku per kategori, buku terbaru, dan jumlah buku yang ditambah bulan ini,
+lalu mengirimkannya ke view 'dashboard'.</p>
+</section>
+
     
     
 
@@ -384,6 +419,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan instance View untuk halaman dashboard.</p>
+</section>
+
             </section>
 
 </article>
@@ -401,11 +440,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">303</span>
+    <span class="phpdocumentor-element-found-in__line">319</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Menghapus data buku dari file JSON.</p>
+        <p class="phpdocumentor-summary">Menghapus data buku dari file JSON berdasarkan ID-nya.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -422,7 +461,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Kode unik dari buku yang akan dihapus.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -433,6 +474,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengarahkan kembali ke halaman index dengan pesan status.</p>
+</section>
+
             </section>
 
 </article>
@@ -450,22 +495,20 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Menampilkan form untuk mengedit data buku.</p>
+        <p class="phpdocumentor-summary">Menampilkan form untuk mengedit data buku yang sudah ada.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">edit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">edit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr>|<abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>(Metode ini ditambahkan untuk kelengkapan CRUD)</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -473,7 +516,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Kode unik buku yang akan diedit.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -483,7 +528,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr>|<abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan view 'buku.edit' jika data ditemukan, atau redirect ke index jika tidak ditemukan.</p>
+</section>
+
             </section>
 
 </article>
@@ -501,11 +550,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Menampilkan daftar semua data buku.</p>
+        <p class="phpdocumentor-summary">Menampilkan daftar semua data buku dalam bentuk tabel.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -514,7 +563,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Ini adalah halaman utama untuk manajemen data buku.</p>
+</section>
+
     
     
 
@@ -523,6 +574,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\View\View">View</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan instance View untuk halaman index buku.</p>
+</section>
+
             </section>
 
 </article>
@@ -540,11 +595,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Menyimpan data buku baru dari form.</p>
+        <p class="phpdocumentor-summary">Menyimpan data buku baru yang dikirim dari form &#039;create&#039;.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -553,7 +608,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini melakukan validasi input, pengecekan keunikan ISBN,
+penambahan data baru, dan penyimpanan kembali ke file JSON.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -561,7 +619,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Objek request yang berisi semua data input dari form.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -572,6 +632,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengarahkan pengguna kembali ke halaman index
+dengan pesan sukses atau kembali ke form dengan pesan error.</p>
+</section>
+
             </section>
 
 </article>
@@ -589,11 +654,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Memperbarui data buku di dalam file JSON.</p>
+        <p class="phpdocumentor-summary">Memperbarui data buku di dalam file JSON berdasarkan input dari form &#039;edit&#039;.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -610,14 +675,18 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Illuminate\Http\Request">Request</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Objek request yang berisi data terbaru.</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$id</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Kode unik buku yang sedang diperbarui.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -628,6 +697,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\Http\RedirectResponse">RedirectResponse</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengarahkan pengguna kembali ke halaman index
+dengan pesan status (sukses atau gagal).</p>
+</section>
+
             </section>
 
 </article>
@@ -645,7 +719,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -658,7 +732,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini membuat sebuah kode dengan prefix 'BK-' dan memastikan kode tersebut
+belum pernah digunakan sebelumnya dengan memeriksanya ke data yang ada.</p>
+</section>
+
     
     
 
@@ -667,6 +744,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Kode buku unik yang telah di-generate.</p>
+</section>
+
             </section>
 
 </article>
@@ -684,7 +765,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -697,7 +778,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini membaca file, melakukan decode dari format JSON ke array PHP,
+dan mengurutkan hasilnya berdasarkan tanggal registrasi (data terbaru akan berada di paling atas).</p>
+</section>
+
     
     
 
@@ -706,6 +790,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan array yang berisi semua data buku. Jika file tidak ada,
+rusak, atau kosong, akan mengembalikan array kosong.</p>
+</section>
+
             </section>
 
 </article>
@@ -723,7 +812,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
@@ -736,7 +825,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini melakukan iterasi pada semua data buku dan mencocokkan 'kode_buku'.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -744,7 +835,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Kode unik buku yang ingin dicari.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -755,6 +848,11 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan data buku dalam bentuk array jika ditemukan,
+atau null jika tidak ada data yang cocok.</p>
+</section>
+
             </section>
 
 </article>
@@ -772,7 +870,7 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Http/Controllers/BukuController.php"><a href="files/app-http-controllers-bukucontroller.html"><abbr title="app/Http/Controllers/BukuController.php">BukuController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -785,7 +883,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Fungsi ini menimpa file JSON yang ada dengan data baru yang diberikan.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -793,7 +893,9 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Array lengkap data buku yang akan disimpan.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -804,6 +906,10 @@ Mengelola semua request HTTP terkait data buku yang disimpan di file JSON.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Mengembalikan true jika penyimpanan berhasil, dan false jika gagal.</p>
+</section>
+
             </section>
 
 </article>

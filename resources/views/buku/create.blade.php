@@ -93,12 +93,3 @@
         </form>
     </div>
 @endsection
-
-@section('scripts')
-<script>
-    // Tahun Terbit validation - only numbers
-    document.getElementById('tahun_terbit').addEventListener('input', function(e) {
-        this.value = this.value.replace(/[^0-4]/g, '');
-    })
-</script>
-@endsection

@@ -37,7 +37,6 @@
                 <div class="sidebar-menu-title">Menu</div>
                 <ul class="nav">
                     <li class="nav-item">
-                        {{-- [PERBAIKAN 1] --}}
                         <a class="nav-link {{ request()->routeIs('dashboard') ? 'active bg-gradient-orange' : '' }}" href="{{ route('dashboard') }}">
                             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="3" width="7" height="7"></rect>
@@ -49,7 +48,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        {{-- [PERBAIKAN 2] --}}
                         <a class="nav-link {{ request()->routeIs('buku.*') ? 'active bg-gradient-orange' : '' }}" href="{{ route('buku.index') }}">
                             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -94,7 +92,6 @@
     @endif
 
     <script>
-        // ... (Kode JavaScript Anda tidak perlu diubah) ...
         const hamburger = document.getElementById('hamburger');
         const sidebar = document.getElementById('sidebar');
         const sidebarOverlay = document.getElementById('sidebarOverlay');

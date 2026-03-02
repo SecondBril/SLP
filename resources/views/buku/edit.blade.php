@@ -3,7 +3,6 @@
 @section('title', 'Edit Data Buku')
 
 @section('content')
-    {{-- 1. Mengubah Judul dan Deskripsi Halaman --}}
     <div class="page-header mb-4">
         <div class="page-header-content">
             <div>
@@ -16,22 +15,18 @@
     <hr class="mb-4">
 
     <div class="data-card">
-        {{-- 2. Mengubah Action Form dan Menambahkan Method PUT --}}
         <form action="{{ route('buku.update', $buku['kode_buku']) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div class="form-body">
                 <div class="form-grid ">
-
-                    {{-- 3. Menambahkan Field Kode Buku (Read-Only) --}}
                     <div class="form-group grid-full-width">
                         <label for="kode_buku" class="form-label">Kode Buku</label>
                         <input type="text" class="form-control" id="kode_buku" name="kode_buku" value="{{ $buku['kode_buku'] }}" readonly>
                         <small class="form-text text-muted">Kode buku tidak dapat diubah.</small>
                     </div>
 
-                    {{-- 4. Mengisi Otomatis Setiap Input dengan Data yang Ada --}}
                     <div class="form-group">
                         <label for="ISBN" class="form-label">ISBN</label>
                         <input type="text" class="form-control @error('ISBN') is-invalid @enderror" id="ISBN" name="ISBN" value="{{ old('ISBN', $buku['ISBN']) }}" placeholder="Contoh: 978-602-03-2478-4" required minlength="10">
@@ -100,21 +95,10 @@
 
             <div class="form-actions">
                 <a href="{{ route('buku.index') }}" class="btn btn-secondary">Batal</a>
-                {{-- 5. Mengubah Teks Tombol Aksi --}}
                 <button type="submit" class="btn btn-primary">
                     Update Data
                 </button>
             </div>
         </form>
     </div>
-@endsection
-
-@section('scripts')
-
-<script>
-    // Tahun Terbit validation - only numbers
-    document.getElementById('tahun_terbit').addEventListener('input', function(e) {
-        this.value = this.value.replace(/[^0-4]/g, '');
-    })
-</script>
 @endsection

@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Http\\Controllers\\BukuController",
             "name": "BukuController",
-            "summary": "Class\u0020BukuController\nMengelola\u0020semua\u0020request\u0020HTTP\u0020terkait\u0020data\u0020buku\u0020yang\u0020disimpan\u0020di\u0020file\u0020JSON.",
+            "summary": "Class\u0020BukuController\nMengelola\u0020semua\u0020request\u0020HTTP\u0020terkait\u0020data\u0020buku.",
             "url": "classes/App-Http-Controllers-BukuController.html"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003AgetAllBuku\u0028\u0029",
@@ -33,7 +33,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "Menampilkan\u0020daftar\u0020semua\u0020data\u0020buku.",
+            "summary": "Menampilkan\u0020daftar\u0020semua\u0020data\u0020buku\u0020dalam\u0020bentuk\u0020tabel.",
             "url": "classes/App-Http-Controllers-BukuController.html#method_index"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Acreate\u0028\u0029",
@@ -43,28 +43,98 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Astore\u0028\u0029",
             "name": "store",
-            "summary": "Menyimpan\u0020data\u0020buku\u0020baru\u0020dari\u0020form.",
+            "summary": "Menyimpan\u0020data\u0020buku\u0020baru\u0020yang\u0020dikirim\u0020dari\u0020form\u0020\u0027create\u0027.",
             "url": "classes/App-Http-Controllers-BukuController.html#method_store"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Aedit\u0028\u0029",
             "name": "edit",
-            "summary": "Menampilkan\u0020form\u0020untuk\u0020mengedit\u0020data\u0020buku.",
+            "summary": "Menampilkan\u0020form\u0020untuk\u0020mengedit\u0020data\u0020buku\u0020yang\u0020sudah\u0020ada.",
             "url": "classes/App-Http-Controllers-BukuController.html#method_edit"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
-            "summary": "Memperbarui\u0020data\u0020buku\u0020di\u0020dalam\u0020file\u0020JSON.",
+            "summary": "Memperbarui\u0020data\u0020buku\u0020di\u0020dalam\u0020file\u0020JSON\u0020berdasarkan\u0020input\u0020dari\u0020form\u0020\u0027edit\u0027.",
             "url": "classes/App-Http-Controllers-BukuController.html#method_update"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Menghapus\u0020data\u0020buku\u0020dari\u0020file\u0020JSON.",
+            "summary": "Menghapus\u0020data\u0020buku\u0020dari\u0020file\u0020JSON\u0020berdasarkan\u0020ID\u002Dnya.",
             "url": "classes/App-Http-Controllers-BukuController.html#method_destroy"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\BukuController\u003A\u003A\u0024filePath",
             "name": "filePath",
-            "summary": "",
+            "summary": "Mendefinisikan\u0020path\u0020\u0028lokasi\u0029\u0020file\u0020JSON\u0020yang\u0020digunakan\u0020sebagai\u0020database.",
             "url": "classes/App-Http-Controllers-BukuController.html#property_filePath"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\Controller",
+            "name": "Controller",
+            "summary": "",
+            "url": "classes/App-Http-Controllers-Controller.html"
+        },                {
+            "fqsen": "\\App\\Models\\User",
+            "name": "User",
+            "summary": "",
+            "url": "classes/App-Models-User.html"
+        },                {
+            "fqsen": "\\App\\Models\\User\u003A\u003Acasts\u0028\u0029",
+            "name": "casts",
+            "summary": "Get\u0020the\u0020attributes\u0020that\u0020should\u0020be\u0020cast.",
+            "url": "classes/App-Models-User.html#method_casts"
+        },                {
+            "fqsen": "\\App\\Models\\User\u003A\u003A\u0024fillable",
+            "name": "fillable",
+            "summary": "The\u0020attributes\u0020that\u0020are\u0020mass\u0020assignable.",
+            "url": "classes/App-Models-User.html#property_fillable"
+        },                {
+            "fqsen": "\\App\\Models\\User\u003A\u003A\u0024hidden",
+            "name": "hidden",
+            "summary": "The\u0020attributes\u0020that\u0020should\u0020be\u0020hidden\u0020for\u0020serialization.",
+            "url": "classes/App-Models-User.html#property_hidden"
+        },                {
+            "fqsen": "\\App\\Providers\\AppServiceProvider",
+            "name": "AppServiceProvider",
+            "summary": "",
+            "url": "classes/App-Providers-AppServiceProvider.html"
+        },                {
+            "fqsen": "\\App\\Providers\\AppServiceProvider\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "Register\u0020any\u0020application\u0020services.",
+            "url": "classes/App-Providers-AppServiceProvider.html#method_register"
+        },                {
+            "fqsen": "\\App\\Providers\\AppServiceProvider\u003A\u003Aboot\u0028\u0029",
+            "name": "boot",
+            "summary": "Bootstrap\u0020any\u0020application\u0020services.",
+            "url": "classes/App-Providers-AppServiceProvider.html#method_boot"
+        },                {
+            "fqsen": "\\Database\\Factories\\UserFactory",
+            "name": "UserFactory",
+            "summary": "",
+            "url": "classes/Database-Factories-UserFactory.html"
+        },                {
+            "fqsen": "\\Database\\Factories\\UserFactory\u003A\u003Adefinition\u0028\u0029",
+            "name": "definition",
+            "summary": "Define\u0020the\u0020model\u0027s\u0020default\u0020state.",
+            "url": "classes/Database-Factories-UserFactory.html#method_definition"
+        },                {
+            "fqsen": "\\Database\\Factories\\UserFactory\u003A\u003Aunverified\u0028\u0029",
+            "name": "unverified",
+            "summary": "Indicate\u0020that\u0020the\u0020model\u0027s\u0020email\u0020address\u0020should\u0020be\u0020unverified.",
+            "url": "classes/Database-Factories-UserFactory.html#method_unverified"
+        },                {
+            "fqsen": "\\Database\\Factories\\UserFactory\u003A\u003A\u0024password",
+            "name": "password",
+            "summary": "The\u0020current\u0020password\u0020being\u0020used\u0020by\u0020the\u0020factory.",
+            "url": "classes/Database-Factories-UserFactory.html#property_password"
+        },                {
+            "fqsen": "\\Database\\Seeders\\DatabaseSeeder",
+            "name": "DatabaseSeeder",
+            "summary": "",
+            "url": "classes/Database-Seeders-DatabaseSeeder.html"
+        },                {
+            "fqsen": "\\Database\\Seeders\\DatabaseSeeder\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Seed\u0020the\u0020application\u0027s\u0020database.",
+            "url": "classes/Database-Seeders-DatabaseSeeder.html#method_run"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -85,5 +155,30 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Models",
+            "name": "Models",
+            "summary": "",
+            "url": "namespaces/app-models.html"
+        },                {
+            "fqsen": "\\App\\Providers",
+            "name": "Providers",
+            "summary": "",
+            "url": "namespaces/app-providers.html"
+        },                {
+            "fqsen": "\\Database\\Factories",
+            "name": "Factories",
+            "summary": "",
+            "url": "namespaces/database-factories.html"
+        },                {
+            "fqsen": "\\Database",
+            "name": "Database",
+            "summary": "",
+            "url": "namespaces/database.html"
+        },                {
+            "fqsen": "\\Database\\Seeders",
+            "name": "Seeders",
+            "summary": "",
+            "url": "namespaces/database-seeders.html"
         }            ]
 );

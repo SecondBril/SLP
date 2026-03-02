@@ -349,7 +349,7 @@
 }
 
 .stats-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -1028,12 +1028,6 @@
     font-size: 13px;
 }
 
-.book-details {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 .book-code {
     font-weight: 600;
     color: #2d3142;
@@ -1072,12 +1066,6 @@
     height: 12px;
 }
 
-.publisher-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
 .publisher-name {
     font-weight: 500;
     color: #2d3142;
@@ -1108,10 +1096,14 @@
 
 /* Action Buttons */
 .td-actions {
+    /* Mencegah konten (misal: tombol) terpotong ke baris baru. */
     white-space: nowrap;
 }
 
 .action-buttons {
+    /* Menjadikan elemen ini sebagai 'flex container'. */
+    /* Anak-anak langsung dari elemen ini akan menjadi 'flex items' dan
+       secara default akan diatur dalam satu baris (horizontal). */
     display: flex;
     gap: 8px;
     align-items: center;
@@ -1122,14 +1114,19 @@
 }
 
 .btn-action {
+    /* Mengaktifkan flexbox, memungkinkan item di dalamnya (ikon & teks) ditata dengan mudah.
+       'inline-flex' membuatnya sebaris dengan teks lain. */
     display: inline-flex;
     align-items: center;
     padding: 6px 14px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
+    /* Menghilangkan dekorasi teks */
     text-decoration: none;
+    /* Menambahkan animasi transisi yang halus (0.2 detik) untuk semua properti */
     transition: all 0.2s ease;
+    /* Mengubah kursor menjadi ikon tangan untuk menandakan elemen bisa diklik. */
     cursor: pointer;
     border: 1px solid;
     gap: 4px;

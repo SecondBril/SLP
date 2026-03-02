@@ -12,10 +12,7 @@
 
             </div>
             <a href="{{ route('buku.create') }}" class="btn-add">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                 Tambah buku
             </a>
         </div>
@@ -71,7 +68,7 @@
             </div>
             <div class="stat-content">
                 <p class="stat-label">Penambahan Buku Hari Ini</p>
-                <h3 class="stat-value">{{ $buku->filter(fn($p) => \Carbon\Carbon::parse($p['tanggal_register'])->isToday())->count() }}</h3>
+                <h3 class="stat-value">{{ $jumlahBukuHariIni }}</h3>
             </div>
         </div>
     </div>
@@ -197,20 +194,9 @@
                 </tbody>
             </table>
         </div>
-
-        <!-- No Results State -->
-        <div class="no-results" id="noResults" style="display: none;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-            </svg>
-            <h5 class="no-results-title">Tidak Ada Hasil</h5>
-            <p class="no-results-text">Coba ubah kata kunci pencarian atau filter yang dipilih</p>
-        </div>
     </div>
 
     <script>
-        // Skrip ini bisa ditaruh di file JS terpisah atau di dalam tag <script> di Blade
         document.addEventListener('DOMContentLoaded', function () {
             const tombolHapus = document.querySelectorAll('.form-hapus button[type="submit"]');
 
@@ -238,5 +224,4 @@
             });
         });
     </script>
-
 @endsection

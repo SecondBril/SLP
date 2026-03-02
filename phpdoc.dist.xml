@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://www.phpdoc.org"
     xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/3.0/xsd/phpdoc.xsd">
-    <title>Dokumentasi Rental Mobil</title>
+    <title>Dokumentasi Perpustakaan</title>
     <paths>
         <output>docs/api</output>
     </paths>
