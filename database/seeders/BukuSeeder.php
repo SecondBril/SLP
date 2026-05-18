@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Buku;
 use Illuminate\Support\Carbon;
+use Faker\Factory as Faker;
 
 class BukuSeeder extends Seeder
 {
@@ -13,10 +14,12 @@ class BukuSeeder extends Seeder
      */
     public function run(): void
     {
-        // Data dummy yang diambil dari struktur JSON Anda sebelumnya
-        $dataBuku = [
+        $faker = Faker::create('id_ID');
+
+        // 1. Data Spesifik (Manual)
+        $dataManual = [
             [
-                "ISBN" => "978602063582766",
+                "ISBN" => "9786020635827",
                 "judul" => "Sebuah Seni untuk Bersikap Bodo Amat",
                 "kategori" => "Pengembangan Diri",
                 "lokasi_rak" => "PD-01",
@@ -38,102 +41,88 @@ class BukuSeeder extends Seeder
                 "tanggal_register" => "2025-10-15 11:45:30"
             ],
             [
-                "ISBN" => "9786024246128",
-                "judul" => "Cosmos",
-                "kategori" => "Sains & Teknologi",
-                "lokasi_rak" => "ST-11",
-                "penulis" => "Carl Sagan",
-                "penerbit" => "Kepustakaan Populer Gramedia",
-                "tahun_terbit" => "2017",
-                "kode_buku" => "BK-SCI001",
-                "tanggal_register" => "2025-10-14 09:10:05"
-            ],
-            [
-                "ISBN" => "9789799109315",
-                "judul" => "Nusantara: A History of Indonesia",
+                "ISBN" => "9786020635834",
+                "judul" => "Sapiens: A Brief History of Humankind",
                 "kategori" => "Sejarah",
-                "lokasi_rak" => "SJ-02",
-                "penulis" => "Bernard H.M. Vlekke",
-                "penerbit" => "Kepustakaan Populer Gramedia",
-                "tahun_terbit" => "2016",
-                "kode_buku" => "BK-SEJ001",
-                "tanggal_register" => "2025-10-13 14:00:00"
+                "lokasi_rak" => "SH-03",
+                "penulis" => "Yuval Noah Harari",
+                "penerbit" => "Gramedia Pustaka Utama",
+                "tahun_terbit" => "2015",
+                "kode_buku" => "BK-SHJ001",
+                "tanggal_register" => "2025-10-14 14:20:45"
             ],
             [
-                "ISBN" => "9786020320333",
-                "judul" => "Filosofi Teras",
-                "kategori" => "Pengembangan Diri",
-                "lokasi_rak" => "PD-02",
-                "penulis" => "Henry Manampiring",
-                "penerbit" => "Kompas",
-                "tahun_terbit" => "2018",
-                "kode_buku" => "BK-DEV002",
-                "tanggal_register" => "2025-10-12 16:20:45"
-            ],
-            [
-                "ISBN" => "9789792273113",
+                "ISBN" => "9786024812316",
                 "judul" => "Laskar Pelangi",
                 "kategori" => "Fiksi",
-                "lokasi_rak" => "FK-08",
+                "lokasi_rak" => "FK-06",
                 "penulis" => "Andrea Hirata",
                 "penerbit" => "Bentang Pustaka",
                 "tahun_terbit" => "2005",
                 "kode_buku" => "BK-FIK002",
-                "tanggal_register" => "2025-10-10 10:30:00"
+                "tanggal_register" => "2025-10-13 09:15:00"
             ],
             [
-                "ISBN" => "9786024246838",
-                "judul" => "Guns, Germs, and Steel",
-                "kategori" => "Sejarah",
-                "lokasi_rak" => "SJ-03",
-                "penulis" => "Jared Diamond",
-                "penerbit" => "Kepustakaan Populer Gramedia",
+                "ISBN" => "9786020635841",
+                "judul" => "Atomic Habits",
+                "kategori" => "Pengembangan Diri",
+                "lokasi_rak" => "PD-02",
+                "penulis" => "James Clear",
+                "penerbit" => "Gramedia Pustaka Utama",
                 "tahun_terbit" => "2018",
-                "kode_buku" => "BK-SEJ002",
-                "tanggal_register" => "2025-10-09 13:00:19"
+                "kode_buku" => "BK-DEV002",
+                "tanggal_register" => "2025-10-12 16:40:20"
             ],
             [
-                "ISBN" => "9780553801477",
-                "judul" => "A Brief History of Time",
-                "kategori" => "Sains & Teknologi",
-                "lokasi_rak" => "ST-07",
-                "penulis" => "Stephen Hawking",
-                "penerbit" => "Bantam Dell Publishing Group",
-                "tahun_terbit" => "1988",
-                "kode_buku" => "BK-SCI002",
-                "tanggal_register" => "2025-10-08 17:55:00"
+                "ISBN" => "9786024812323",
+                "judul" => "Negeri 5 Menara",
+                "kategori" => "Fiksi",
+                "lokasi_rak" => "FK-07",
+                "penulis" => "Ahmad Fuadi",
+                "penerbit" => "Gramedia Pustaka Utama",
+                "tahun_terbit" => "2009",
+                "kode_buku" => "BK-FIK003",
+                "tanggal_register" => "2025-10-11 13:30:50"
             ],
             [
-                "ISBN" => "9786024241772",
-                "judul" => "Sejarah Dunia yang Disembunyikan",
-                "kategori" => "Non-Fiksi",
-                "lokasi_rak" => "NF-01",
-                "penulis" => "Jonathan Black",
-                "penerbit" => "Pustaka Alvabet",
+                "ISBN" => "9786020635858",
+                "judul" => "The Subtle Art of Not Giving a F*ck",
+                "kategori" => "Pengembangan Diri",
+                "lokasi_rak" => "PD-03",
+                "penulis" => "Mark Manson",
+                "penerbit" => "Gramedia Pustaka Utama",
                 "tahun_terbit" => "2016",
-                "kode_buku" => "BK-NON001",
-                "tanggal_register" => "2025-10-07 15:15:15"
+                "kode_buku" => "BK-DEV003",
+                "tanggal_register" => "2025-10-10 10:05:15"
             ],
-            [
-                "ISBN" => "9781451673319",
-                "judul" => "How to Win Friends and Influence People",
-                "kategori" => "Non-Fiksi",
-                "lokasi_rak" => "NF-04",
-                "penulis" => "Dale Carnegie",
-                "penerbit" => "Simon & Schuster",
-                "tahun_terbit" => "1936",
-                "kode_buku" => "BK-NON002",
-                "tanggal_register" => "2025-10-05 20:10:10"
-            ]
         ];
 
-        // Looping dan masukkan data ke database menggunakan Model
-        foreach ($dataBuku as $buku) {
-            // Kita menggunakan updateOrCreate agar jika seeder dijalankan dua kali,
-            // data tidak menjadi duplikat (mengakibatkan error unique constraint pada ISBN).
+        // Eksekusi data manual
+        foreach ($dataManual as $buku) {
+            Buku::updateOrCreate(['ISBN' => $buku['ISBN']], $buku);
+        }
+
+        // 2. Generate Sisa Data (Hingga 100)
+        $kategoriList = ['Pengembangan Diri', 'Fiksi', 'Sains & Teknologi', 'Sejarah', 'Non-Fiksi'];
+        $currentCount = count($dataManual);
+        $targetCount = 100;
+
+        for ($i = $currentCount + 1; $i <= $targetCount; $i++) {
+            $kategori = $faker->randomElement($kategoriList);
+            $prefix = strtoupper(substr($kategori, 0, 3));
+
             Buku::updateOrCreate(
-                ['ISBN' => $buku['ISBN']], // Kunci pencarian
-                $buku // Data yang diisi atau diperbarui
+                ['ISBN' => $faker->isbn13()],
+                [
+                    "judul" => $faker->sentence(3),
+                    "kategori" => $kategori,
+                    "lokasi_rak" => $prefix . "-" . $faker->numberBetween(10, 99),
+                    "penulis" => $faker->name,
+                    "penerbit" => $faker->company,
+                    "tahun_terbit" => $faker->year(),
+                    "kode_buku" => "BK-" . $prefix . str_pad($i, 3, '0', STR_PAD_LEFT),
+                    "tanggal_register" => $faker->dateTimeBetween('-1 year', 'now')->format('Y-m-d H:i:s')
+                ]
             );
         }
     }

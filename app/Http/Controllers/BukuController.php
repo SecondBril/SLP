@@ -20,25 +20,33 @@ class BukuController extends Controller
         return $kodeBuku;
     }
 
-    public function dashboard()
+   public function dashboard()
     {
-        // Pendelegasian agregasi ke Database, BUKAN ke memory PHP/Collection.
+        $now = \Carbon\Carbon::now();
+
+        // 1. Total keseluruhan buku
         $totalBuku = Buku::count();
 
+        // 2. Limitasi 5 buku terbaru
         $bukuTerbaru = Buku::orderBy('tanggal_register', 'desc')->limit(5)->get();
 
-        setlocale(LC_TIME, 'id_ID.utf8');
-        $namaBulanIni = Carbon::now()->isoFormat('MMMM');
+        // 3. Agregasi buku bulan ini
+        $jumlahBukuBulanIni = Buku::whereMonth('tanggal_register', $now->month)
+                                ->whereYear('tanggal_register', $now->year)
+                                ->count();
 
-        // Menggunakan query builder untuk efisiensi ekstrim dibanding collect()->filter()
-        $jumlahBukuBulanIni = Buku::whereMonth('tanggal_register', Carbon::now()->month)
-                                  ->whereYear('tanggal_register', Carbon::now()->year)
-                                  ->count();
+        // 4. Agregasi buku hari ini (Metrik yang terlewat)
+        $jumlahBukuHariIni = Buku::whereDate('tanggal_register', $now->format('Y-m-d'))
+                                ->count();
+
+        setlocale(LC_TIME, 'id_ID.utf8');
+        $namaBulanIni = $now->isoFormat('MMMM');
 
         return view('dashboard', compact(
             'totalBuku',
             'bukuTerbaru',
             'jumlahBukuBulanIni',
+            'jumlahBukuHariIni',
             'namaBulanIni'
         ));
     }

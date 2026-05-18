@@ -56,6 +56,12 @@
                             Data Buku
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>
